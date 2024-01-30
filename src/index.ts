@@ -8,7 +8,7 @@ import cors from "cors";
 
 const app = express();
 
-const corsOptions = require("./config/corsOptions");
+// const corsOptions = require("./config/corsOptions");
 const connectDB = require("./config/dbCon");
 
 /* Sendgrid implementation */
@@ -24,7 +24,7 @@ connectDB();
 app.use(credentials);
 
 // Cross Origin Resource Sharing
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 // Routes imports
 import registerRouter from "./routes/account";
