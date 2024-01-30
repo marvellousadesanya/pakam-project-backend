@@ -14,6 +14,6 @@ router.post("/", createAssessment_1.createAssessment);
 router.get("/", getAllAssessments_1.getAllAssessments);
 router.get("/assessment/:assessmentID", getAssessment_1.getAssessment);
 router.put("/assessment/:assessmentID", updateAssessment_1.updateAssessment);
-router.delete("/", deleteAssessment_1.deleteAssessment);
+router.delete("/assessment/:assessmentID", deleteAssessment_1.deleteAssessment);
 exports.default = router;
 //# sourceMappingURL=assessment.js.map

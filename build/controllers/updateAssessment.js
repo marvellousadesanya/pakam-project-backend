@@ -10,7 +10,7 @@ const updateAssessment = async (req, res) => {
     const { fullName, description, quantity } = req.body;
     const { assessmentID } = req.params;
     const userId = req.userId;
-    const assessment = await Assessment_1.default.findOne({ assessmentID });
+    const assessment = await Assessment_1.default.findById(assessmentID);
     if (!fullName || !description || !quantity) {
         return res.status(500).send({
             status: "error",

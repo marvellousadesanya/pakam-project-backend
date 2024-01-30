@@ -40,7 +40,7 @@ const login = async (req, res) => {
         const refreshToken = jsonwebtoken_1.default.sign({
             UserInfo: {
                 _id: foundUser._id,
-                email: foundUser.username,
+                username: foundUser.username,
             },
         }, `${process.env.ACCESS_TOKEN_SECRET}`, { expiresIn: "5d" });
         foundUser.refreshToken = refreshToken;

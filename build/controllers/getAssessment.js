@@ -10,7 +10,7 @@ const getAssessment = async (req, res) => {
     try {
         const userId = req.userId;
         if (userId) {
-            const assessment = await Assessment_1.default.findOne({ assessmentID });
+            const assessment = await Assessment_1.default.findById(assessmentID);
             return res.status(200).send({ status: "ok", assessment });
         }
         else {

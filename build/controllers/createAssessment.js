@@ -26,7 +26,6 @@ const createAssessment = async (req, res) => {
         }
         try {
             const createdAssessment = await Assessment_1.default.create({
-                ID: 1,
                 fullName,
                 description,
                 quantity,

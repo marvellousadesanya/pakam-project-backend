@@ -14,7 +14,7 @@ const deleteAssessment = async (req, res) => {
                 .status(401)
                 .send({ status: "error", message: "User is not signed in" });
         }
-        const deletedAssessment = await Assessment_1.default.deleteOne({ ID: assessmentID });
+        const deletedAssessment = await Assessment_1.default.deleteOne({ _id: assessmentID });
         if (deletedAssessment.deletedCount === 1) {
             return res
                 .status(200)

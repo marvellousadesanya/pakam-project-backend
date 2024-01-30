@@ -8,8 +8,8 @@ const User_1 = __importDefault(require("../models/User"));
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const registerUser = async (req, res) => {
-    const { username, password } = req.body;
-    if (!username || !password) {
+    const { firstName, lastName, username, password } = req.body;
+    if (!firstName || !lastName || !username || !password) {
         return res.status(400).json({
             status: "error",
             statusCode: 400,
@@ -26,19 +26,20 @@ const registerUser = async (req, res) => {
     }
     try {
         const hashedPassword = await bcrypt_1.default.hash(password, 10);
-        const result = await User_1.default.create({
+        const createdUser = await User_1.default.create({
+            firstName,
+            lastName,
             username,
-            otp: { otp: null, createdAt: null },
             password: hashedPassword,
         });
-        const token = jsonwebtoken_1.default.sign({ id: result._id }, `${process.env.ACCESS_TOKEN_SECRET}`, {
+        const token = jsonwebtoken_1.default.sign({ id: createdUser._id }, `${process.env.ACCESS_TOKEN_SECRET}`, {
             expiresIn: "1d",
         });
         return res.status(201).json({
             status: "ok",
             statusCode: 201,
             message: "User created successfully. Please check email for verification code",
-            user: result,
+            createdUser,
             token,
         });
     }
