@@ -10,9 +10,10 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const verifyJWT_1 = __importDefault(require("./middlewares/verifyJWT"));
 const credentials_1 = __importDefault(require("./middlewares/credentials"));
+const cors_1 = __importDefault(require("cors"));
 const app = (0, express_1.default)();
 exports.app = app;
-// const corsOptions = require("./config/corsOptions");
+const corsOptions = require("./config/corsOptions");
 const connectDB = require("./config/dbCon");
 /* Sendgrid implementation */
 // sgMail.setApiKey(process.env.SENDGRID_API_KEY);
@@ -23,7 +24,7 @@ connectDB();
 // and fetch cookies credentials requirement
 app.use(credentials_1.default);
 // Cross Origin Resource Sharing
-// app.use(cors(corsOptions));
+app.use((0, cors_1.default)(corsOptions));
 // Routes imports
 const account_1 = __importDefault(require("./routes/account"));
 const account_2 = __importDefault(require("./routes/account"));
