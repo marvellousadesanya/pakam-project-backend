@@ -56,8 +56,7 @@ app.use(verifyJWT);
 
 app.use("/v1/assessments", allAssessmentsRouter);
 app.use("/v1/create", createAssessmentRouter);
-// app.use("/v1/update", updateAsssessmentRouter);
-app.use("/v1/delete", deleteAssessmentRouter);
+app.use("/v1/", deleteAssessmentRouter);
 app.use("/v1/", getAssessmentRouter);
 app.use("/v1/", updateAsssessmentRouter);
 
