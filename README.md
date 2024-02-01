@@ -9,14 +9,14 @@ JSON Web Tokens (JWT): JWT is used for secure authentication.
 
 ## Installation
 1. ### Clone repo:
-  https://github.com/marvellousadesanya/pakam-project-backend
+    `git clone https://github.com/marvellousadesanya/pakam-project-backend`
 
 2. ### Install dependencies
-  npm install
+   `npm install`
 
-3. ### Set up environment variables:
-  Create a .env file in the root directory.
-  Look up .env.example file for required variables
+4. ### Set up environment variables:
+   Create a `.env` file in the root directory.
+   Look up .env.example file for required variables
 
-4. ###Start the server
-   npm run dev
+4. ### Start the server
+   `npm run dev`
