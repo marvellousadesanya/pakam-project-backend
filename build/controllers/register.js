@@ -18,9 +18,9 @@ const registerUser = async (req, res) => {
     }
     const userExists = await User_1.default.findOne({ username });
     if (userExists) {
-        return res.status(400).json({
+        return res.status(409).json({
             status: "error",
-            statusCode: 400,
+            statusCode: 409,
             message: "User already exists",
         });
     }
