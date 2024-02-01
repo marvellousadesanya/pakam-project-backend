@@ -20,3 +20,5 @@ JSON Web Tokens (JWT): JWT is used for secure authentication.
 
 4. ### Start the server
    `npm run dev`
+
+## The entire backend is also hosted on Vercel. Link >>> https://pakam-project-backend.vercel.app
