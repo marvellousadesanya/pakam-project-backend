@@ -12,8 +12,8 @@ const login = async (req, res) => {
     try {
         const foundUser = await User_1.default.findOne({ username }).exec();
         if (!foundUser) {
-            return res.status(400).json({
-                statusCode: 400,
+            return res.status(404).json({
+                statusCode: 404,
                 message: "User does not exist",
             });
         }
